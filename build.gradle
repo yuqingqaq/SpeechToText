@@ -1,0 +1,31 @@
+plugins {
+    id 'application'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.cloud:google-cloud-speech:4.41.0'
+    implementation 'com.google.cloud:google-cloud-texttospeech:2.47.0'
+    implementation 'javazoom:jlayer:1.0.1'
+
+    implementation 'com.fasterxml.jackson.core:jackson-databind:[2.10.1,)'
+    implementation 'com.squareup.okhttp3:okhttp:[3.14.9,)' // 检查最新版本
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+application {
+    mainClassName = 'org.example.TTSQuickStartSample'
+}
+
+
+test {
+    useJUnitPlatform()
+}
